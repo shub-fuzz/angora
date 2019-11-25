@@ -3,7 +3,7 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/angora_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID 1338bc594
+    DockerTagID 76c57a123
 
 %environment
     AFL_SKIP_CPUFREQ=1
@@ -12,6 +12,11 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/angora_runner:16.04
     export AFL_SKIP_CPUFREQ LC_ALL LANG
 
 %runscript
+    echo /start_fuzzing $@
+    exec /start_fuzzing "$@"
+
+%startscript
+    echo /start_fuzzing $@
     exec /start_fuzzing "$@"
 
 %post
