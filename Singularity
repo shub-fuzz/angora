@@ -3,13 +3,14 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/angora_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID b87bf7b89
+    DockerTagID 3ee6bcd03
 
 %environment
     AFL_SKIP_CPUFREQ=1
     LC_ALL=en_US.UTF-8
     LANG=en_US.UTF-8
-    export AFL_SKIP_CPUFREQ LC_ALL LANG
+    TMPDIR=/tmp
+    export AFL_SKIP_CPUFREQ LC_ALL LANG TMPDIR
 
 %runscript
     echo /start_fuzzing $@
