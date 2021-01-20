@@ -3,7 +3,7 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/angora_runner:18.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID c7bfe56a1
+    DockerTagID cdf41f16a
 
 %environment
     AFL_SKIP_CPUFREQ=1
